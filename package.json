@@ -1,0 +1,22 @@
+{
+  "name": "calories_tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "start:ts": "tsc -w",
+    "start:js": "nodemon build/app.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.0",
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "telegraf": "^4.12.2"
+  }
+}
