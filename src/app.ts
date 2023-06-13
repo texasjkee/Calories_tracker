@@ -3,7 +3,7 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 // import { Telegraf } from 'telegraf';
 // import { message }  from 'telegraf/filters';
 
-const doc = new GoogleSpreadsheet('1MUFEigUKAYWF3wRREcS4sgNjENykQyMK30TybdUd2Vc');
+const doc = new GoogleSpreadsheet(process.env.GOOGLE_ID);
 
 const client_email = process.env.GOOGLE_EMAIL;
 const private_key = process.env.GOOGLE_KEY!.replace(/\\n/g, '\n');

@@ -13,7 +13,8 @@ require("dotenv/config");
 const google_spreadsheet_1 = require("google-spreadsheet");
 // import { Telegraf } from 'telegraf';
 // import { message }  from 'telegraf/filters';
-const doc = new google_spreadsheet_1.GoogleSpreadsheet('1MUFEigUKAYWF3wRREcS4sgNjENykQyMK30TybdUd2Vc');
+const doc = new google_spreadsheet_1.GoogleSpreadsheet(process.env.GOOGLE_ID);
+console.log(process.env.GOOGLE_ID);
 const client_email = process.env.GOOGLE_EMAIL;
 const private_key = process.env.GOOGLE_KEY.replace(/\\n/g, '\n');
 function start() {
