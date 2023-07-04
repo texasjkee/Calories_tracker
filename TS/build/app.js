@@ -14,7 +14,6 @@ const google_spreadsheet_1 = require("google-spreadsheet");
 // import { Telegraf } from 'telegraf';
 // import { message }  from 'telegraf/filters';
 const doc = new google_spreadsheet_1.GoogleSpreadsheet(process.env.GOOGLE_ID);
-console.log(process.env.GOOGLE_ID);
 const client_email = process.env.GOOGLE_EMAIL;
 const private_key = process.env.GOOGLE_KEY.replace(/\\n/g, '\n');
 function start() {
@@ -22,6 +21,10 @@ function start() {
         yield doc.useServiceAccountAuth({ client_email, private_key });
         yield doc.loadInfo(); // loads document properties and worksheets
         console.log(doc.title);
+        const sheet = doc.sheetsByIndex[1]; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+        console.log(sheet.title);
+        const rows = yield sheet.getRows();
+        console.log(rows[0]._rawData);
     });
 }
 ;

@@ -12,6 +12,10 @@ async function start() {
     await doc.useServiceAccountAuth({client_email, private_key });
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
+    const sheet = doc.sheetsByIndex[1]; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+    console.log(sheet.title);
+    const rows = await sheet.getRows(); 
+    console.log(rows[0]._rawData)
 };
 
 start();
